@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Characters from "./Characters.jsx"; // This is for individual character list items
+import Characters from "./Characters.jsx"; 
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import { actions } from "../store/store";
+import { actions } from "../store";
 
 const CharactersList = () => {
     const { store, dispatch } = useGlobalReducer();

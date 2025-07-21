@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Planets from "./Planets.jsx"; // This is for individual planet list items
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import { actions } from "../store/store";
+import { actions } from "../store";
 
 const PlanetsList = () => {
     const { store, dispatch } = useGlobalReducer();

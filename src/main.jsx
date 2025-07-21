@@ -1,10 +1,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';  // Correct: relative to src/
+import './index.css';  
 import { RouterProvider } from "react-router-dom";
-import { router } from "./routes";  // Correct: relative to src/
-// FIX: Corrected import path for StoreProvider
+import { router } from "./routes";  
+// FIX
 import { StoreProvider } from './hooks/useGlobalReducer';
 
 const Main = () => {

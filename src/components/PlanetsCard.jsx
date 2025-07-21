@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import { actions } from "../store/store";
+import { actions } from "../store";
 
 const PlanetsCard = () => { // Changed component name to PlanetsCard
     const { store, dispatch } = useGlobalReducer();

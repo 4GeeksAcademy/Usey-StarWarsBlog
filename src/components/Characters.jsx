@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import { actions } from "../store/store";
+import { actions } from "../store";
 
 const Characters = (props) => {
     const { store, dispatch } = useGlobalReducer();
@@ -21,9 +21,13 @@ const Characters = (props) => {
             <div className="card-body">
                 <h3 className="card-title">{props.character.name}</h3>
                 <Link to={"/character/" + props.character.uid}>
-                    <button className="btn btn-primary" onClick={() => { actions(dispatch).setCurrentCharacterId(props.character.uid); }}>Details</button>
+                    <button className="btn btn-primary" onClick={() => { actions(dispatch).setCurrentCharacterId(props.character.uid); }}>More Details</button>
                 </Link>
-                <button className="favorite btn btn-warning bi bi-star" onClick={() => clicker()}></button>
+               
+                <button className="favorite btn btn-warning" onClick={() => clicker()}>
+                    &#9733; {/* Unicode Solid Star Symbol */}
+                    
+                </button>
             </div>
         </div>
     );

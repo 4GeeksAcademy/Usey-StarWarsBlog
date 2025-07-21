@@ -1,8 +1,7 @@
- // src/components/Navbar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import useGlobalReducer from "../hooks/useGlobalReducer"; // Correct path: ../hooks/
-import { actions } from "../store/store"; // FIX: This was the problematic path. It should be ../store/store (from components to store)
+import useGlobalReducer from "../hooks/useGlobalReducer";
+import { actions } from "../store";
 
 export const Navbar = () => {
     const { store, dispatch } = useGlobalReducer();
@@ -31,7 +30,8 @@ export const Navbar = () => {
                                         className="btn btn-danger btn-sm ml-2"
                                         onClick={() => { actions(dispatch).deleteFav(favorite.name); }}
                                     >
-                                        <i className="bi bi-trash-fill"></i>
+                                        &#x1F5D1; {/* Unicode Trash Can Symbol */}
+                                        {/* You could also use an 'X' or 'Del' if symbols are too much: "X" */}
                                     </button>
                                 </li>
                             );

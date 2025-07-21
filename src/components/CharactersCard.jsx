@@ -1,10 +1,9 @@
- // src/components/CharactersCard.jsx
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import { actions } from "../store/store";
+import { actions } from "../store";
 
-const CharactersCard = () => { // Changed component name to CharactersCard
+const CharactersCard = () => { 
     const { store, dispatch } = useGlobalReducer();
     const params = useParams();
 
@@ -55,4 +54,4 @@ const CharactersCard = () => { // Changed component name to CharactersCard
         </div>
     );
 };
-export default CharactersCard; // Changed export name to CharactersCard
+export default CharactersCard; 

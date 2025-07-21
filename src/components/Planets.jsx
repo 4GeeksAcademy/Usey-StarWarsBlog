@@ -1,15 +1,15 @@
-import React from "react";
+ import React from "react";
 import { Link } from "react-router-dom";
-import useGlobalReducer from "../hooks/useGlobalReducer"; // Use the custom hook
-import { actions } from "../store/store"; // Import actions from your store
+import useGlobalReducer from "../hooks/useGlobalReducer";
+import { actions } from "../store";
 
 const Planets = (props) => {
-    const { store, dispatch } = useGlobalReducer(); // Use the custom hook
+    const { store, dispatch } = useGlobalReducer();
 
     const clicker = () => {
         let check = store.favorites.find((favorite) => favorite.name === props.planet.name);
         if (!check) {
-            actions(dispatch).addToFavorites(props.planet.name, props.planet.uid, "planets"); // Ensure type is 'planets'
+            actions(dispatch).addToFavorites(props.planet.name, props.planet.uid, "planets");
         } else {
             actions(dispatch).deleteFav(props.planet.name);
         }
@@ -21,7 +21,10 @@ const Planets = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{props.planet.name}</h5>
                 <Link to={"/planet/" + props.planet.uid} className="btn btn-primary">More Details</Link>
-                <button className="favorite btn btn-warning bi bi-star" onClick={() => clicker()}></button>
+                {/* Removed bi bi-star class and added Unicode star */}
+                <button className="favorite btn btn-warning" onClick={() => clicker()}>
+                    &#9733; {/* Unicode Solid Star Symbol */}
+                </button>
             </div>
         </div>
     );

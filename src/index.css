@@ -1,0 +1,301 @@
+
+
+/* Body Styling */
+body {
+    background-color: #b5bcc7; /* Light grey background */
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #ffffff !important; /* White background for navbar */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Make navbar sticky at the top */
+    top: 0;
+    z-index: 1000; /* Ensure navbar stays on top of other content */
+}
+
+.navbar img {
+    height: 40px; /* Adjust Star Wars logo size */
+    vertical-align: middle; /* Align image nicely */
+}
+
+/* Favorites Dropdown Button */
+#dropDown .btn-primary {
+    background-color: #007bff; /* Bootstrap blue */
+    border-color: #007bff;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px; /* Adjust button padding */
+    border-radius: 0.25rem;
+}
+
+/* Favorites Dropdown Menu Items */
+.dropdown-menu {
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.175);
+    min-width: 180px; /* Ensure a minimum width */
+}
+
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    color: #333; /* Default text color */
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #000; /* Darker text on hover */
+}
+
+#favItem {
+    white-space: nowrap; /* Prevent text wrapping */
+    padding-right: 0.5rem; /* Give space for the delete button */
+}
+
+/* Delete Button in Favorites Dropdown */
+#favItem .btn-danger {
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    color: #dc3545; /* Bootstrap danger red */
+    font-size: 1.2rem; /* Adjusted for Unicode character */
+    padding: 0 5px;
+    margin-left: 10px; /* Space from text */
+    cursor: pointer;
+    line-height: 1; /* Vertically align icon */
+    display: flex; /* Use flex to center the symbol */
+    align-items: center;
+    justify-content: center;
+}
+
+#favItem .btn-danger:hover {
+    color: #c82333;
+}
+
+
+/* Main Content Titles (e.g., "Characters", "Planets") */
+.title {
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    margin: 40px 0 20px 20px; /* Top, Right/Bottom, Left margins */
+    padding-left: 20px; /* Indent slightly */
+}
+
+/* Container for character/planet lists */
+.container {
+    max-width: 100%; /* Use full width for scrolling content */
+    padding: 0 20px; /* Add horizontal padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Horizontal Scrollable List */
+.characterList,
+.planetList {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-bottom: 20px; /* Space for scrollbar */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox scrollbar */
+    scrollbar-color: #888 #f1f1f1; /* Firefox scrollbar colors */
+}
+
+/* Webkit (Chrome, Safari) scrollbar styling */
+.characterList::-webkit-scrollbar,
+.planetList::-webkit-scrollbar {
+    height: 8px; /* Height of horizontal scrollbar */
+}
+
+.characterList::-webkit-scrollbar-track,
+.planetList::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track background */
+    border-radius: 10px;
+}
+
+.characterList::-webkit-scrollbar-thumb,
+.planetList::-webkit-scrollbar-thumb {
+    background: #888; /* Thumb color */
+    border-radius: 10px;
+}
+
+.characterList::-webkit-scrollbar-thumb:hover,
+.planetList::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Thumb color on hover */
+}
+
+
+/* Individual Card Styling */
+.card {
+    flex: 0 0 auto; /* Prevent cards from growing or shrinking, keep their width */
+    width: 280px; /* Fixed width for the cards */
+    margin-right: 20px; /* Space between cards */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Soft shadow */
+    overflow: hidden; /* Ensure content stays within card */
+    background-color: #ffffff;
+    display: flex; /* Use flexbox for card content alignment */
+    flex-direction: column; /* Stack card content vertically */
+    box-sizing: border-box; /* Include padding/border in width */
+}
+
+.card:last-child {
+    margin-right: 0; /* No margin on the last card */
+}
+
+#characterImg,
+#charImg { /* Apply to both character and planet images */
+    width: 100%;
+    height: 180px; /* Fixed height for the image */
+    object-fit: cover; /* Cover the area without distortion */
+    background-color: #ccc; /* Placeholder grey background */
+    display: block; /* Remove extra space below image */
+}
+
+.card-body {
+    padding: 1rem;
+    text-align: left;
+    flex-grow: 1; /* Allow body to grow and take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push buttons to the bottom */
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Specific detail lines within cards */
+.card-body p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.2rem; /* Reduce spacing between detail lines */
+    line-height: 1.3;
+}
+
+/* Card Button Group */
+.card-body .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: bold;
+    flex-grow: 1; /* Allow button to take available width */
+    margin-right: 0.5rem; /* Space between buttons */
+    display: inline-flex; /* For button alignment */
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Favorite Button (Star) */
+.card-body .favorite.btn-warning {
+    background-color: #ffc107; /* Bootstrap yellow */
+    border-color: #ffc107;
+    color: #333; /* Darker color for the star icon */
+    width: 40px; /* Fixed width for a square button */
+    height: 40px; /* Fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Make it circular */
+    font-size: 1.4rem; /* Adjusted for Unicode star size */
+    padding: 0; /* Remove default padding */
+    line-height: 1; /* Helps vertically center the character */
+}
+
+.card-body .favorite.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+    color: #212529;
+}
+
+/* Align buttons at the bottom of the card body */
+.card-body > div { /* Target the div wrapping the buttons if it exists */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* Push buttons to the bottom */
+}
+
+/* Footer (Basic styling if needed) */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: #343a40; /* Dark background */
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Individual Character/Planet Card Page (CharactersCard/PlanetsCard) */
+#indivCard {
+    width: 80% !important; /* Make it wider */
+    margin: 50px auto; /* Center the card */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack top and trait list */
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+#cardTop {
+    display: flex;
+    flex-direction: row; /* Image and text side-by-side */
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: flex-start; /* Align top of image and text */
+}
+
+#characterPhoto img {
+    width: 250px; /* Fixed size for the detail page image */
+    height: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+#cardTopText {
+    flex-grow: 1; /* Allow text to take remaining space */
+    text-align: left;
+}
+
+#cardTopText .card-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+#cardTopText .card-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+#traitList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allow traits to wrap */
+    justify-content: space-around; /* Dist
